@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Andika&display=swap&subset=cyrillic');
+body {
+    background-image: url(http://4.bp.blogspot.com/-uZ6NCszZTT0/VXJYcEJzyrI/AAAAAAAAADc/9yUJ-cz8d1g/s1600/ecualizador_abajo.gif); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Фиксируем фон веб-страницы */
+	background-size: 120% 101%;
+	background-repeat : no-repeat;
+	position: absolute; left:70px; top: 14px; right:70px;
+   }
+h1.transparent {
+	color: aqua; 
+	font-size:40px;
+	font-weight: bolder;
+	font-family: andika;
+	text-align: center  
+}
+h1.transparent + p {
+    background-color: rgba(0, 40, 40, 0.5); /* Цвет фона и значение прозрачности */
+    padding: 10px; /* Поля вокруг текста */
+	border-radius: 30px;
+	text-align: justify;
+	color: aqua; 
+	font-size:23px;
+	text-indent: 20px;
+	font-style: oblique;
+	font-weight: bolder;
+	font-family: andika;
+	}
+table {border-spacing: 15px 10px;}
+img {
+	 border-radius: 5px;
+	 width:550px;
+	 height:250px;
+}
+.table {
+	position:absolute;right:0px; top:280px;}
+.img {
+  width: 100%;
+  max-width: 450px; /* опционально */
+  opacity: .99;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+.img::before {
+  content: '';
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  width: 100%;
+  height: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  transition-property: top, opacity;
+  transition-duration: 0.3s;
+}
+.img img {
+  display: block;
+  width: 230; /* ширина картинки */
+  height: 138; /* высота картинки */
+}
+.img .caption1 {
+  width: 100%;
+  color: aqua;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  text-align: center;
+}
+.img .caption1 span {
+  display: block;
+  opacity: 0;
+  position: relative;
+  transition-property: top, opacity;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+}
+.img .caption1 .title1 {
+  line-height: 1;
+  font-weight: normal;
+  font-size: 12px;
+  font-weight: bolder;
+  font-family: andika;
+
+}
+.img:focus::before,
+.img:focus span, .img:hover::before,
+.img:hover span {
+  opacity: 1;
+}
+.img:focus::before, .img:hover::before {
+  top: 50%;
+}
+.img:focus span, .img:hover span {
+  top: 0;
+}
+.img:focus .title1, .img:hover .title1 {
+          transition-delay: 0.15s;
+}
+.img:focus .info, .img:hover .info {
+          transition-delay: 0.25s;
+}
+.thumbs {
+  width: 100%;
+  max-width: 450px; /* опционально */
+  margin: 10px;
+  opacity: .99;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+.thumbs::before {
+  content: '';
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  width: 100%;
+  height: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  transition-property: top, opacity;
+  transition-duration: 0.3s;
+}
+.thumbs img {
+  display: block;
+  width: 100%; /* ширина картинки */
+  height: auto; /* высота картинки */
+}
+.thumbs .caption {
+  width: 100%;
+  padding: 20px;
+  color: aqua;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  text-align: center;
+}
+.thumbs .caption span {
+  display: block;
+  opacity: 0;
+  position: relative;
+  top: 100px;
+  transition-property: top, opacity;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+}
+.thumbs .caption .title {
+  line-height: 1;
+  font-weight: normal;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: andika;
+
+}
+.thumbs:focus::before,
+.thumbs:focus span, .thumbs:hover::before,
+.thumbs:hover span {
+  opacity: 1;
+}
+.thumbs:focus::before, .thumbs:hover::before {
+  top: 50%;
+}
+.thumbs:focus span, .thumbs:hover span {
+  top: 0;
+}
+.thumbs:focus .title, .thumbs:hover .title {
+          transition-delay: 0.15s;
+}
+.thumbs:focus .info, .thumbs:hover .info {
+          transition-delay: 0.25s;
+}
+.photo {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: relative; /* Относительное позиционирование */
+   }
+   .photo:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0; right: 0; top: 5px; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: rgba(0,255,255,0.6); /* Полупрозрачный цвет фона */
+    color: #black; /* Цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    font-family: andika; /* Гарнитура шрифта */
+    font-size: 14px; /* Размер текста подсказки */
+    padding: 5px 10px; /* Поля */
+    border: 1px solid #333; /* Параметры рамки */
+   }
+#header {
+	height: 160px;
+	background: aqua;
+	padding: 0 0 0 0px;
+	background-image: linear-gradient(45deg, rgba(0, 30, 31, .8), rgba(30, 30, 30, .5)), url(https://sun9-62.userapi.com/c205428/v205428870/7f3fb/F-R_J_U7waA.jpg);
+	background-size: 100% 100%;
+	background-repeat : no-repeat;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+   }
+   ul {
+    margin-left: 5;
+   }
+   f {
+	color: aqua; 
+	font-size:16px;
+	text-indent: 10px;
+	font-family: andika;
+	font-weight: bolder;
+	}
+   b {
+	   color: aqua; 
+	font-size:10px;
+	font-family: andika;
+	font-weight: bolder;	
+   }
+   a
+   {
+	   text-decoration: none;
+   }
+.nav {
+	display: flex;
+	justify-content: center; /* разместим справа */
+	background-color:rgba(0,0,0,0.3);
+}
+
+.nav a {
+	color:aqua;
+	padding:0px 20px;
+	text-decoration:none;
+	text-align:center;
+}
+.nav a:hover { background:black;
+				border-radius: 5px; }
+
+/* меньше 800px */
+@media all and (max-width: 800px) {
+	.nav { justify-content: space-around; }
+	.nav a{ flex-grow:1; /* растягиваться на всю ширину */ }
+}
+
+/* меньше 500px */
+@media all and (max-width: 500px) {
+	.nav { flex-direction: column; }
+}
+.dropbtn {
+    background-color:rgba(255,255,255,0);
+    padding: 2px;
+    font-size: 1px;
+    border: none;
+    cursor: pointer;
+}
+/* контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Выпадающей контент (по умолчанию скрыт) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 120px;
+    z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: aqua;
+	text-align:left;
+    padding: 1px 20px;
+    text-decoration: none;
+    display: block;
+	border-radius: 5px;
+}
+
+/* Изменить цвет выпадающих ссылок при наведении */
+.dropdown-content a:hover {background-color:rgba(0,0,0,0.3);
+}
+
+/* Показать выпадающее меню при наведении */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+.dropdown:hover .dropbtn {
+    background-color:rgba(255,255,255,0);
+}
+@keyframes go-left-right {        /* объявляем имя анимации: "go-left-right" */
+    from { left: 0px; }             /* от: left: 0px */
+    to { left: calc(100% - 50px); } /* до: left: 100%-50px */
+  }
+
+  .progress {
+    animation: go-left-right 3s infinite alternate;
+    /* применить анимацию "go-left-right" на элементе
+       продолжительностью 3 секунды
+       количество раз: бесконечно (infinite)
+       менять направление анимации каждый раз (alternate)
+    */
+
+    position: relative;
+    border: 2px solid black;
+    width: 50px;
+    height: 20px;
+    background: aqua;
+  }

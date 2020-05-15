@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Andika&display=swap&subset=cyrillic');
+body {
+    background-image: url(http://4.bp.blogspot.com/-uZ6NCszZTT0/VXJYcEJzyrI/AAAAAAAAADc/9yUJ-cz8d1g/s1600/ecualizador_abajo.gif); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Фиксируем фон веб-страницы */
+	background-size: 120% 101%;
+	background-repeat : no-repeat;
+	position: absolute; left:70px; top: 14px; right:70px;
+   }
+h1 {
+	color: aqua; 
+	font-size:40px;
+	font-weight: bolder;
+	font-family: andika;
+}
+.scale {
+    transition: 1s; /* Время эффекта */
+   }
+   .scale:hover {
+    transform: scale(3.0); /* Увеличиваем масштаб */
+   }
+table {border-spacing: 10px 11px;}
+ #header {
+	height: 160px;
+	background: aqua;
+	padding: 0 0 0 0px;
+	background-image: linear-gradient(45deg, rgba(0, 30, 31, .8), rgba(30, 30, 30, .5)), url(https://sun9-62.userapi.com/c205428/v205428870/7f3fb/F-R_J_U7waA.jpg);
+		background-size: 100% 100%;
+	background-repeat : no-repeat;
+}
+img {
+	 border-radius: 5px;
+	 width:120px;
+	 height:100px;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+   }
+   ul {
+    margin-left: 5;
+   }
+   f {
+	color: aqua; 
+	font-size:16px;
+	text-indent: 10px;
+	font-family: andika;
+	font-weight: bolder;
+	}
+   b {
+	   color: aqua; 
+	font-size:10px;
+	font-family: andika;
+	font-weight: bolder;
+   }
+   a
+   {
+	   text-decoration: none;
+   }
+.nav {
+	display: flex;
+	justify-content: center; /* разместим справа */
+	background-color:rgba(0,0,0,0.3);
+}
+
+.nav a {
+	color:aqua;
+	padding:0px 20px;
+	text-decoration:none;
+	text-align:center;
+}
+.nav a:hover { background:black;
+				border-radius: 5px; }
+
+/* меньше 800px */
+@media all and (max-width: 800px) {
+	.nav { justify-content: space-around; }
+	.nav a{ flex-grow:1; /* растягиваться на всю ширину */ }
+}
+
+/* меньше 500px */
+@media all and (max-width: 500px) {
+	.nav { flex-direction: column; }
+}
+.dropbtn {
+    background-color:rgba(255,255,255,0);
+    padding: 2px;
+    font-size: 1px;
+    border: none;
+    cursor: pointer;
+}
+/* контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Выпадающей контент (по умолчанию скрыт) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 120px;
+    z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: aqua;
+	text-align:left;
+    padding: 1px 20px;
+    text-decoration: none;
+    display: block;
+	border-radius: 5px;
+}
+
+/* Изменить цвет выпадающих ссылок при наведении */
+.dropdown-content a:hover {background-color:rgba(0,0,0,0.3);
+}
+
+/* Показать выпадающее меню при наведении */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+.dropdown:hover .dropbtn {
+    background-color:rgba(255,255,255,0);
+}
+@keyframes go-left-right {        /* объявляем имя анимации: "go-left-right" */
+    from { left: 0px; }             /* от: left: 0px */
+    to { left: calc(100% - 50px); } /* до: left: 100%-50px */
+  }
+
+  .progress {
+    animation: go-left-right 3s infinite alternate;
+    /* применить анимацию "go-left-right" на элементе
+       продолжительностью 3 секунды
+       количество раз: бесконечно (infinite)
+       менять направление анимации каждый раз (alternate)
+    */
+
+    position: relative;
+    border: 2px solid black;
+    width: 50px;
+    height: 20px;
+    background: aqua;
+  }
